@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genero">
+        <item>Dona</item>
+        <item>Home</item>
+        <item>Indefinit</item>
+    </string-array>
+    <string-array name="tipo_dependiente">
+        <item>Malalt crónic</item>
+        <item>Persona major</item>
+        <item>Discapacit</item>
+    </string-array>
+    <string-array name="dias">
+        <item>Dilluns</item>
+        <item>Dimarts</item>
+        <item>Dimecres</item>
+        <item>Dijous</item>
+        <item>Divendres</item>
+        <item>Dissabte</item>
+        <item>Diumenge</item>
+        <item>Hui</item>
+        <item>Demá</item>
+
+    </string-array>
+
+
+</resources>

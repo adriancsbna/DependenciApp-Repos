@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="INFORMACIÓN">
+            <menu>
+                <item
+                    android:id="@+id/nav_datosPersonales"
+                    android:icon="@drawable/ic_usuario"
+                    android:title="@string/your_data" />
+                <item
+                    android:id="@+id/nav_informes"
+                    android:icon="@android:drawable/ic_input_get"
+                    android:title="@string/ver_informes" />
+                <item
+                    android:id="@+id/nav_refrescar"
+                    android:icon="@android:drawable/ic_popup_sync"
+                    android:title="@string/refresca_recordatorios" />
+                <item
+                    android:id="@+id/nav_cerrarSesion"
+                    android:icon="?android:attr/actionModeCloseDrawable"
+                    android:title="@string/cerrar_sesion" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

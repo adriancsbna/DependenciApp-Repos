@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name" translatable="false">DependeciApp</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="teriminado_button">Terminado</string>
+    <string name="title_activity_login" translatable="false">DependenciApp</string>
+    <string name="aviso_enviadio">Se ha enviado un aviso a la central</string>
+    <string name="aviso_fallido">Ha habido un error enviando el aviso</string>
+    <string name="no_conexion_aviso">No hay conexion, no se puede enviar el aviso</string>
+    <string name="ver_informes">Ver informe de avisos</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_dni" translatable="false">DNI</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Acceder</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="error_invalid_DNI">Ese DNI no es valido</string>
+    <string name="error_invalid_password">La contraseña es damasiado corta</string>
+    <string name="error_incorrect_password">Introduce la contraseña</string>
+    <string name="error_field_required">Escribe un DNI</string>
+    <string name="recordar">Recordar usuario y contraseña</string>
+
+    <!-- Strings related to "GetLocation" Class -->
+    <string name="maps_right_required">La aplicación necesita permisos para utilizar Google Maps</string>
+    <string name="gps_disabled">El GPS ha sido desactivado</string>
+    <string name="gps_enabled">El GPS ha sido activado</string>
+    <string name="maps_provider_out_of_service">El proveedor del servicio gps está fuera de servicio</string>
+    <string name="maps_provider_temporarily_unavailable">El proveedor del servicio gps no está disponible temporalmente</string>
+    <string name="maps_marker_you_are_here">USTED ESTÁ AQUÍ</string>
+    <string name="maps_this_may_take_a_few_seconds">Espere, por favor. La geolocalización puede tomar unos segundos</string>
+
+    <!-- Strings related to "MainActivity" Class -->
+    <string name="tab_text_1">Recordatorios</string>
+    <string name="tab_text_2">¿Dónde estoy?</string>
+    <string name="tab_text_3">Botón</string>
+    <string name="section_format">Avisa a un asistente</string>
+
+    <!-- Strings related to "activity_main_drawer" Layout -->
+    <string name="your_data">Tus datos</string>
+    <string name="assistant_data" translatable="false">Datos de tu asistente</string>
+    <string name="refresca_recordatorios">Refrescar recordatorios</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="inicia_sesion_automaticamente">Inicia sesion automaticamente</string>
+    <string name="no_inicia_sesion">No se ha podido iniciar sesion, comprueba tu conexion a internet</string>
+    <string name="no_conexion_no_borra">No se pueden terminar recordatorios sin conexion</string>
+
+    <!-- Strings related to "activity_usuario" Layout -->
+    <string name="tvUsuarioId">Identificador de Usuario: </string>
+    <string name="tvNombre">Nombre: </string>
+    <string name="tvApellidos">Apellidos: </string>
+    <string name="tvDni" translatable="false">DNI: </string>
+    <string name="tvFechaNacimiento">Fecha de nacimiento: </string>
+    <string name="tvGenero">Genero: </string>
+    <string name="tvFechaAlta">Fecha de alta: </string>
+    <string name="tvTipoDependiente">Tipo de dependiente: </string>
+    <string name="btnCerrar">Cerrar</string>
+
+
+    <string name="no_carga_recordatorios">No se han podido cargar los recordatorios, intentelo con conexion</string>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aceptar">Acceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="teriminado_button">Acabat</string>
+    <string name="no_conexion_aviso">No hi ha conexió, no es pot enviar l\'avis</string>
+    <string name="ver_informes">Veure informes d\'avisos</string>
+    <string name="prompt_password">Conrasenya</string>
+    <string name="action_sign_in">Accedir</string>
+    <string name="error_invalid_DNI">Aqueix DNI no es valid</string>
+    <string name="error_invalid_password">La contrasneya es massa curta</string>
+    <string name="error_incorrect_password">Introdueix la contrasenya</string>
+    <string name="error_field_required">Escriu un DNI</string>
+    <string name="recordar">Recordar l\'usuari i contrasenya</string>
+    <string name="maps_right_required">L\'a aplicació necessita permissos per a utilizar Google Maps</string>
+    <string name="gps_disabled">El GPS ha sigut desactivat</string>
+    <string name="gps_enabled">El GPS ha sigut activat</string>
+    <string name="maps_provider_out_of_service">El proveedor del servici GPS esta fora de servei</string>
+    <string name="maps_provider_temporarily_unavailable">El proveedor del serveri GPS no esta disponible temporalment</string>
+    <string name="maps_marker_you_are_here">VOSTRE ES TROBA ASI</string>
+    <string name="maps_this_may_take_a_few_seconds">Espere, per favor. La geolocalizacio pot tardar uns segons</string>
+    <string name="tab_text_1">Recordatoris</string>
+    <string name="tab_text_2">¿On estic?</string>
+    <string name="tab_text_3">Polsador</string>
+    <string name="section_format">Avisa a un assistent</string>
+    <string name="your_data">Les teues dades</string>
+    <string name="refresca_recordatorios">Refrescar recordatoris</string>
+    <string name="cerrar_sesion">Tancar sessió</string>
+    <string name="inicia_sesion_automaticamente">Inicia sessió automátiamente</string>
+    <string name="no_inicia_sesion">No s\'ha pogut iniciar sessió, comproba la teua conexó a Internet</string>
+    <string name="tvUsuarioId">Identificador d\'Usuari</string>
+    <string name="tvNombre">Nom:</string>
+    <string name="tvApellidos">Cognoms:</string>
+    <string name="tvFechaNacimiento">Data de naiximent:</string>
+    <string name="tvGenero">Genere:</string>
+    <string name="tvFechaAlta">Data d\'alta</string>
+    <string name="tvTipoDependiente">Tipus de dependent</string>
+    <string name="btnCerrar">Tancar</string>
+    <string name="no_carga_recordatorios">No s\'ha pogut carregar el srecordatoris, intente-ho amb conexió</string>
+    <string name="aviso_enviadio">S\'ha enviat un avís a la central</string>
+    <string name="aviso_fallido">Ha hagut un error enviant l\'avis</string>
+    <string name="no_conexion_no_borra">No es poden acabar els recordatoris sense conexió</string>
+</resources>

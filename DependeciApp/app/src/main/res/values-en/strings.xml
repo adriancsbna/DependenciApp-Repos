@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aceptar">Accept</string>
+    <string name="cancelar">Cancel</string>
+    <string name="teriminado_button">Finished</string>
+    <string name="no_conexion_aviso">No connection, can\'t be sent</string>
+    <string name="ver_informes">See alert reports</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Access</string>
+    <string name="error_invalid_DNI">That DNI is not valid</string>
+    <string name="error_invalid_password">The pass is too short</string>
+    <string name="error_incorrect_password">Enter the password</string>
+    <string name="error_field_required">Write a DNI</string>
+    <string name="recordar">Remembrer user and pass</string>
+    <string name="maps_right_required">The app needs permission to use Google Maps</string>
+    <string name="gps_disabled">The GPS has been disabled</string>
+    <string name="gps_enabled">The GPS has been enabled</string>
+    <string name="maps_provider_out_of_service">The GPS provider is out of service</string>
+    <string name="maps_provider_temporarily_unavailable">The GPS provider is not available temorarily</string>
+    <string name="maps_marker_you_are_here">YOU ARE HERE</string>
+    <string name="maps_this_may_take_a_few_seconds">Please wait, the location may take a few seconds</string>
+    <string name="tab_text_1">Reminder</string>
+    <string name="tab_text_2">Where I am?</string>
+    <string name="tab_text_3">Button</string>
+    <string name="section_format">Notify an assistant</string>
+    <string name="your_data">Your data</string>
+    <string name="refresca_recordatorios">Refresh reminders</string>
+    <string name="cerrar_sesion">Sing out</string>
+    <string name="inicia_sesion_automaticamente">Sing in automatically</string>
+    <string name="no_inicia_sesion">Could not login, check your internet connection</string>
+    <string name="tvUsuarioId">User ID:</string>
+    <string name="tvNombre">Name:</string>
+    <string name="tvApellidos">Surnames:</string>
+    <string name="tvFechaNacimiento">Birthdate:</string>
+    <string name="tvGenero">Gender:</string>
+    <string name="tvFechaAlta">Registration date:</string>
+    <string name="tvTipoDependiente">Type of dependent</string>
+    <string name="btnCerrar">Close</string>
+    <string name="no_carga_recordatorios">Reminders could not be reloaded, try it with connections</string>
+    <string name="aviso_enviadio">An alert has been sent to the central</string>
+    <string name="aviso_fallido">There was an error sending the alert</string>
+    <string name="no_conexion_no_borra">You can\'t finish a task without Internet</string>
+</resources>

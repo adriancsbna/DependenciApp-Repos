@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genero">
+        <item>Women</item>
+        <item>Men</item>
+        <item>Indef</item>
+    </string-array>
+    <string-array name="tipo_dependiente">
+        <item>Chronick ill</item>
+        <item>Old Person</item>
+        <item>Disabled</item>
+    </string-array>
+    <string-array name="dias">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+
+    </string-array>
+
+
+</resources>
