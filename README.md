@@ -1,7 +1,7 @@
-# DependenciApp-Repos
+﻿# DependenciApp-Repos
 Proyecto 2ºDAM
 
 Test User
-DNI: 48473100W
+DNI: 11111111H
 Pass: 1234
 

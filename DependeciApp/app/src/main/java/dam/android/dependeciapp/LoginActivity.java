@@ -65,7 +65,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etPass;
     private View mProgressView;
     private View mLoginFormView;
-    private Conexion con;
     private CheckBox cbGuardaUsuarioPass;
     private CheckBox cbIniciaSesion;
 
@@ -160,11 +159,11 @@ public class LoginActivity extends AppCompatActivity {
             focusView = etDNI;
             Toast.makeText(this, R.string.error_field_required, Toast.LENGTH_LONG).show();
 
-        } /*else if (!dniValido(DNI.trim())) {
+        } else if (!dniValido(DNI.trim())) {
             Toast.makeText(this, R.string.error_invalid_DNI, Toast.LENGTH_LONG).show();
             focusView = etDNI;
             cancel = true;
-        }*/
+        }
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.

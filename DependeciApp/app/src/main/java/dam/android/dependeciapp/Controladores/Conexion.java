@@ -24,8 +24,6 @@ import dam.android.dependeciapp.AsyncTasks.CreaConexion;
 
 public class Conexion {
 
-
-
     public static String toMD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -51,8 +49,6 @@ public class Conexion {
         else
             return false;
     }
-
-
 
 
     public static String readStream(InputStream in) {

@@ -67,45 +67,17 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
                 db.vaciaTabla();
                 String resultStream = Conexion.readStream(urlCon.getInputStream());
                 JSONObject json = new JSONObject(resultStream);
-
-                //JSONObject json2 = json.getJSONObject("personas");
                 JSONArray jArray = json.getJSONArray("recordatorios");
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject recordJsonSucio = jArray.getJSONObject(i);
                     JSONObject recordJson = recordJsonSucio.getJSONObject("recordatorio");
-                    int idRecordatorio = recordJson.getInt("_id");
-                    String titulo = recordJson.getString("titulo");
-                    String contenido = recordJson.getString("contenido");
-                    String fechaHora = recordJson.getString("fecha");
-                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    Date fecha = format.parse(fechaHora);
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(fecha);
-
-                    fechaHora = calendar.getTime().toString();
-
-                    //Partimos el String para trabjar con el
-                    String[] fechaHoraArray = fechaHora.split(" ");
-                    String[] horaArray = fechaHoraArray[3].split(":");
-
-                    String hora = horaArray[0] + ":" + horaArray[1];
-                    //creamos el recordatorio
-                    Recordatorio r = new Recordatorio(idRecordatorio, titulo, contenido, hora, calendar.getTime());
-
-                    //Establecemos una fecha para poder compararlos luego para ordenar la lista
-                    db.insert(String.valueOf(r.id), r.titulo, r.content, fechaHora, r.hora);
-
-                    recordatorioList.add(r);
+                   creaRecordatorio(recordJson,db);
                 }
                 Collections.sort(recordatorioList, this);
-
-
                 result = true;
-
             } else {
                 Log.i("URL", "ErrorCode: " + urlCon.getResponseCode());
             }
-
         } catch (IOException e) {
             Log.i("IOException", e.getMessage());
         } catch (JSONException e) {
@@ -118,6 +90,25 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
         return result;
     }
 
+    private void creaRecordatorio(JSONObject recordJson,DependenciaDBManager.RecordatoriosDBManager db ) throws JSONException, ParseException {
+        int idRecordatorio = recordJson.getInt("_id");
+        String titulo = recordJson.getString("titulo");
+        String contenido = recordJson.getString("contenido");
+        String fechaHora = recordJson.getString("fecha");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date fecha = format.parse(fechaHora);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(fecha);
+        fechaHora = calendar.getTime().toString();
+        //Partimos el String para trabjar con el
+        String[] fechaHoraArray = fechaHora.split(" ");
+        String[] horaArray = fechaHoraArray[3].split(":");
+        String hora = horaArray[0] + ":" + horaArray[1];
+        //creamos el recordatorio
+        Recordatorio r = new Recordatorio(idRecordatorio, titulo, contenido, hora, calendar.getTime());
+        db.insert(String.valueOf(r.id), r.titulo, r.content, fechaHora, r.hora);
+        recordatorioList.add(r);
+    }
 
     @Override
     public int compare(Recordatorio o1, Recordatorio o2) {
@@ -129,6 +120,5 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
             return 0;
         }
     }
-
 
 }

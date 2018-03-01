@@ -47,26 +47,21 @@ public class RecordatorioAdapter extends RecyclerView.Adapter<RecordatorioAdapte
         holder.tvTitulo.setText(recordatorioList.get(position).titulo);
         holder.tvHora.setText(recordatorioList.get(position).hora);
         String cuando = Recordatorio.obtrenCuando(context,recordatorioList.get(position));
-
         holder.tvCuando.setText(cuando);
         adapter = this;
-
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     //Creamos una nueva instancia del Fragment de Detalle
                     RecordatorioDetalleFragment fragmentDetalle = RecordatorioDetalleFragment.newInstance(holder.mItem, adapter,idUsuario);
-
                     cierraRecordatorioDetalle();
-
                     //Introducimos el Fragment Detalle en el FrameLayout correspondiente
                     ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content, fragmentDetalle).addToBackStack(null).commit();
                     //Al hacerlo, hacemos visible el menu, para poder cerar el Fragment
                     // private FABToolbarLayout fabToolbar;
                     if (fabToolbar.isFab())
                         fabToolbar.show();
-
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
