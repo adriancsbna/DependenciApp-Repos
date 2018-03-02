@@ -15,8 +15,8 @@ import dam.android.dependeciapp.Controladores.Conexion;
  */
 
 public class RecordatorioTerminado extends AsyncTask<Integer, Void, Boolean> {
-    private final int CONNECTION_TIMEOUT = 15000;
-    private final int READ_TIMEOUT = 10000;
+    private final int CONNECTION_TIMEOUT = 2000;
+    private final int READ_TIMEOUT = 2000;
 
     @Override
     protected Boolean doInBackground(Integer... integers) {

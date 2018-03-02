@@ -116,6 +116,8 @@ public class RecordatorioDetalleFragment extends Fragment {
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     }
+                } else {
+                    Toast.makeText(getContext(), R.string.no_conexion_no_borra, Toast.LENGTH_SHORT).show();
                 }
             }
         });

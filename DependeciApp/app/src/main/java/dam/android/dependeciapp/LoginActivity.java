@@ -4,13 +4,11 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,27 +18,21 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.style.BulletSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 import dam.android.dependeciapp.Controladores.Conexion;
@@ -63,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     // UI references.
     private EditText etDNI;
     private EditText etPass;
-    private View mProgressView;
+    private ProgressBar mProgressView;
     private View mLoginFormView;
     private CheckBox cbGuardaUsuarioPass;
     private CheckBox cbIniciaSesion;
@@ -73,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mProgressView = findViewById(R.id.login_progress);
+        mProgressView =(ProgressBar) findViewById(R.id.login_progress);
         mLoginFormView = findViewById(R.id.login_form);
         askForMapPermission();
         Intent i = getIntent();
@@ -292,6 +284,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(MYPREFS, MODE_PRIVATE);
         boolean iniciaSesion = prefs.getBoolean("iniciaSesion", false);
         if (iniciaSesion) {
+            showProgress(true);
             String DNI = prefs.getString("user", "");
             String pass = prefs.getString("pass", "");
             mAuthTask = new UserLoginTask();
@@ -307,8 +300,9 @@ public class LoginActivity extends AppCompatActivity {
      */
     public class UserLoginTask extends AsyncTask<String, Void, Boolean> {
         private Usuario user;
-        private final int CONNECTION_TIMEOUT = 15000;
-        private final int READ_TIMEOUT = 10000;
+        private final int CONNECTION_TIMEOUT = 4000;
+        private final int READ_TIMEOUT = 4000;
+
 
         @Override
         protected Boolean doInBackground(String... strings) {
@@ -316,8 +310,10 @@ public class LoginActivity extends AppCompatActivity {
             String pass = strings[1];
 
             if (Conexion.isNetDisponible(getApplicationContext()))
-                return iniciaSesionOnline(usuario, pass);
-
+                if (iniciaSesionOnline(usuario, pass))
+                    return true;
+                else
+                    return iniciaSesionOffline(usuario, pass);
             else
                 return iniciaSesionOffline(usuario, pass);
 
@@ -360,9 +356,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             } catch (IOException e) {
-                Log.i("IOException", e.getMessage());
             } catch (JSONException e) {
-                Log.i("JSONException", e.getMessage());
             } finally {
                 if (urlCon != null) urlCon.disconnect();
             }
@@ -377,9 +371,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (cursor.getCount() > 0) {
                     String userSQL = cursor.getString(1);
                     String passSQL = cursor.getString(8);
-                    if (user.toUpperCase().equals(userSQL) && pass.equals(passSQL)) {
+                    if (user.equalsIgnoreCase(userSQL) && pass.equalsIgnoreCase(passSQL)) {
                         this.user = new Usuario(cursor);
-                        // GuardaUsuarioPass(user, pass);
                         return true;
                     }
                 }
@@ -397,14 +390,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             } else {
-                if (etPass != null) {
-                    //etPass.setError(getString(R.string.error_incorrect_password));
-                    //etPass.requestFocus();
-                }
+                Toast.makeText(getApplicationContext(), R.string.no_inicia_sesion, Toast.LENGTH_LONG).show();
+
             }
+
         }
-
-
 
         @Override
         protected void onCancelled() {

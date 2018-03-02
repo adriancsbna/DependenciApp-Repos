@@ -22,6 +22,7 @@
     <string name="error_incorrect_password">Introduce la contraseña</string>
     <string name="error_field_required">Escribe un DNI</string>
     <string name="recordar">Recordar usuario y contraseña</string>
+    <string name="no_inicia_sesion">No se ha podido iniciar sesion</string>
 
     <!-- Strings related to "GetLocation" Class -->
     <string name="maps_right_required">La aplicación necesita permisos para utilizar Google Maps</string>
@@ -44,7 +45,6 @@
     <string name="refresca_recordatorios">Refrescar recordatorios</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="inicia_sesion_automaticamente">Inicia sesion automaticamente</string>
-    <string name="no_inicia_sesion">No se ha podido iniciar sesion, comprueba tu conexion a internet</string>
     <string name="no_conexion_no_borra">No se pueden terminar recordatorios sin conexion</string>
 
     <!-- Strings related to "activity_usuario" Layout -->

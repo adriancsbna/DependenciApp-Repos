@@ -41,8 +41,8 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
     private List<Recordatorio> recordatorioList;
     private Context context;
     private int idUsuario;
-    private final int CONNECTION_TIMEOUT = 15000;
-    private final int READ_TIMEOUT = 10000;
+    private final int CONNECTION_TIMEOUT = 3000;
+    private final int READ_TIMEOUT = 3000;
 
     public CargaRecordatorios(List<Recordatorio> lista, Context context) {
         recordatorioList = lista;

@@ -30,26 +30,7 @@ public class Usuario implements Serializable {
     private Date fAlta;
     private String pass;
 
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public Usuario(ResultSet rs) throws SQLException {
-        rs.first();
-        idPersona = rs.getInt("idPersona");
-        DNI = rs.getString("DNI");
-        nombre = rs.getString("Nombre");
-        apellidos = rs.getString("Apellidos");
-        fNacimiento = rs.getDate("Nacimiento");
-        genero = rs.getString("Genero");
-        tipoDeDependiente = rs.getString("Tipo de Dependiente");
-        fAlta = rs.getDate("FechaAlta");
-    }
-
+    public Usuario(){}
     public Usuario(JSONObject json) {
         try {
             JSONObject persona = json.getJSONObject("persona");
@@ -122,6 +103,10 @@ public class Usuario implements Serializable {
 
     public Date getfAlta() {
         return fAlta;
+    }
+
+    public String getPass() {
+        return pass;
     }
 
 }
