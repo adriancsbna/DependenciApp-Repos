@@ -56,7 +56,7 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
         int id = integers[0];
         HttpURLConnection urlCon = null;
         try {
-            URL ul = new URL("http://adriancsbna.hopto.org/Scripts/obten_recordatorios.php?id=" + id);
+            URL ul = new URL("http://casabuenapps.hopto.org/Scripts/obten_recordatorios.php?id=" + id);
             urlCon = (HttpURLConnection) ul.openConnection();
             urlCon.setRequestProperty("Connection", "close");
             urlCon.setConnectTimeout(CONNECTION_TIMEOUT);

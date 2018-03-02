@@ -324,7 +324,7 @@ public class LoginActivity extends AppCompatActivity {
 
             HttpURLConnection urlCon = null;
             try {
-                URL ul = new URL("http://adriancsbna.hopto.org/Scripts/inicia_sesion.php?dni=" + usuario + "&pass=" + pass);
+                URL ul = new URL("http://casabuenapps.hopto.org/Scripts/inicia_sesion.php?dni=" + usuario + "&pass=" + pass);
                 urlCon = (HttpURLConnection) ul.openConnection();
                 urlCon.setRequestProperty("Connection", "close");
                 urlCon.setConnectTimeout(CONNECTION_TIMEOUT);

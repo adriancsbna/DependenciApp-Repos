@@ -23,7 +23,7 @@ public class RecordatorioTerminado extends AsyncTask<Integer, Void, Boolean> {
         HttpURLConnection urlCon = null;
         int idRecordatorio = integers[0];
         try {
-            URL ul = new URL("http://adriancsbna.hopto.org/Scripts/tarea_terminada.php?id=" + idRecordatorio);
+            URL ul = new URL("http://casabuenapps.hopto.org/Scripts/tarea_terminada.php?id=" + idRecordatorio);
             urlCon = (HttpURLConnection) ul.openConnection();
             urlCon.setRequestProperty("Connection", "close");
             urlCon.setConnectTimeout(CONNECTION_TIMEOUT);
