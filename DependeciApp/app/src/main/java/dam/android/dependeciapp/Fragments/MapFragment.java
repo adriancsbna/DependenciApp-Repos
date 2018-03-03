@@ -54,10 +54,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private CargarUbicacionSQLite cargarUbicacionSQLite;
 
-    public static MapFragment newInstance() {
-        return new MapFragment();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         askForMapPermission();
@@ -110,7 +106,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         @SuppressLint("MissingPermission")
         public void onMapReady (GoogleMap googleMap){
             mMap = googleMap;
-
             enableMyLocation();
         }
 
@@ -145,9 +140,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     private class MyLocationListener implements LocationListener {
 
-        private static final float ZOOM_CITY_LEVEL = 10;
-        private static final float ZOOM_STREET_LEVEL = 15;
-        private static final float ZOOM_BUILDING_LEVEL = 20;
+        private static final float ZOOM_BUILDING_LEVEL = 16;
 
         private LatLng myLocation;
         private Marker myMarker;
@@ -176,7 +169,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     if (!list.isEmpty()) {
                         Address address = list.get(0);
                         String addressLine = address.getAddressLine(0);
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLatLng, ZOOM_STREET_LEVEL));
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLatLng, ZOOM_BUILDING_LEVEL));
                         if (myMarker != null) {
                             myMarker.remove();
                         }
