@@ -98,7 +98,6 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
                     if (!cr.get())
                         obtenListaLocal();
 
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
