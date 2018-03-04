@@ -58,6 +58,7 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         recordatorioList = new ArrayList<>();
+        refrescaAvisos();
         if (savedInstanceState != null)
             idUsuario = savedInstanceState.getInt("userId");
         //obtenListaRecordatorios();
@@ -69,6 +70,7 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
         Cursor cursor = db.getRows();
         if (recordatorioList!=null)
         if (cursor != null) {
+            recordatorioList.clear();
             int cuenta = cursor.getCount();
             if (cuenta > 0) {
                 cursor.moveToFirst();
@@ -90,22 +92,19 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
     public void refrescaAvisos() {
         if (Conexion.isNetDisponible(getContext())) {
             try {
-
-                recordatorioList.clear();
-                //recyclerView.getAdapter().notifyDataSetChanged();
                 CargaRecordatorios cr = new CargaRecordatorios(recordatorioList, getContext());
                 cr.execute(idUsuario);
                 try {
                     if (!cr.get())
                         obtenListaLocal();
 
-                    swipe.setRefreshing(false);
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
+                if(recyclerView!=null)
                 recyclerView.getAdapter().notifyDataSetChanged();
             } catch (NullPointerException e) {
                 e.printStackTrace();
@@ -114,6 +113,8 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
         } else {
             obtenListaLocal();
         }
+        if(swipe!=null)
+        swipe.setRefreshing(false);
     }
 
     @Override
@@ -136,7 +137,6 @@ public class RecordatorioFragment extends Fragment implements Comparator<Recorda
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new RecordatorioAdapter(recordatorioList, context, fabToolbar, idUsuario));
         recyclerView.getAdapter().notifyDataSetChanged();
-        refrescaAvisos();
         return view;
     }
 

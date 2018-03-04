@@ -40,14 +40,12 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
 
     private List<Recordatorio> recordatorioList;
     private Context context;
-    private int idUsuario;
     private final int CONNECTION_TIMEOUT = 3000;
     private final int READ_TIMEOUT = 3000;
 
     public CargaRecordatorios(List<Recordatorio> lista, Context context) {
         recordatorioList = lista;
         this.context = context;
-        this.idUsuario = idUsuario;
     }
 
     @Override
@@ -63,6 +61,7 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
             urlCon.setReadTimeout(READ_TIMEOUT);
 
             if (urlCon.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                recordatorioList.clear();
                 DependenciaDBManager.RecordatoriosDBManager db = new DependenciaDBManager.RecordatoriosDBManager(context);
                 db.vaciaTabla();
                 String resultStream = Conexion.readStream(urlCon.getInputStream());
@@ -71,7 +70,7 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject recordJsonSucio = jArray.getJSONObject(i);
                     JSONObject recordJson = recordJsonSucio.getJSONObject("recordatorio");
-                   creaRecordatorio(recordJson,db);
+                    creaRecordatorio(recordJson, db);
                 }
                 Collections.sort(recordatorioList, this);
                 result = true;
@@ -90,7 +89,7 @@ public class CargaRecordatorios extends AsyncTask<Integer, Void, Boolean> implem
         return result;
     }
 
-    private void creaRecordatorio(JSONObject recordJson,DependenciaDBManager.RecordatoriosDBManager db ) throws JSONException, ParseException {
+    private void creaRecordatorio(JSONObject recordJson, DependenciaDBManager.RecordatoriosDBManager db) throws JSONException, ParseException {
         int idRecordatorio = recordJson.getInt("_id");
         String titulo = recordJson.getString("titulo");
         String contenido = recordJson.getString("contenido");
