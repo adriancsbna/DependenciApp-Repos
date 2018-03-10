@@ -39,9 +39,6 @@ public class RecordatorioDetalleFragment extends Fragment {
     private Recordatorio recordatorio;
     private RecordatorioAdapter adapter;
     private Fragment fragment;
-    private int idUsuario;
-    private RelativeLayout fabContiner;
-    private FrameLayout mapFrame;
 
 
     public RecordatorioDetalleFragment() {
@@ -52,7 +49,6 @@ public class RecordatorioDetalleFragment extends Fragment {
         RecordatorioDetalleFragment fragment = new RecordatorioDetalleFragment();
         fragment.setAdapter(adapter);
         fragment.setRecordatorio(recordatorio);
-        fragment.setIdUsuario(id);
         return fragment;
     }
 
@@ -64,9 +60,6 @@ public class RecordatorioDetalleFragment extends Fragment {
         this.recordatorio = recordatorio;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,10 +72,7 @@ public class RecordatorioDetalleFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View v = inflater.inflate(R.layout.fragment_recordatorio_detalle, container, false);
-        fabContiner = getActivity().findViewById(R.id.fabtoolbar_container);
-        mapFrame = getActivity().findViewById(R.id.frameMap);
-        if (mapFrame != null)
-            fabContiner.setVisibility(View.VISIBLE);
+
 
         titulo = v.findViewById(R.id.tvTitulo);
         contenido = v.findViewById(R.id.tvContenido);
@@ -98,8 +88,7 @@ public class RecordatorioDetalleFragment extends Fragment {
                     rt.execute(recordatorio.getId());
                     try {
                         if (rt.get()) {
-                            if (mapFrame != null)
-                                fabContiner.setVisibility(View.INVISIBLE);
+
                             adapter.getRecordatorioList().remove(recordatorio);
                             DependenciaDBManager.RecordatoriosDBManager db = new DependenciaDBManager.RecordatoriosDBManager(getContext());
                             db.delete(String.valueOf(recordatorio.id));

@@ -109,24 +109,6 @@ public class MainActivity extends AppCompatActivity
         });
         fabToolbar = (FABToolbarLayout) findViewById(R.id.fabtoolbar);
 
-
-        recordatoriosFrame = findViewById(R.id.frameRecordatorios);
-        //Si existe este FrameLayout es una tablet, y si no existe es un telefono
-        if (recordatoriosFrame == null)
-            setUIPhone();
-        else
-            setUITablet();
-
-    }
-
-    private void setUITablet() {
-        mapFragment = new MapFragment();
-        recordatorioFragment = RecordatorioFragment.newInstance(user.getIdPersona());
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameRecordatorios, recordatorioFragment).addToBackStack(null).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameMap, mapFragment).addToBackStack(null).commit();
-    }
-
-    private void setUIPhone() {
         fabGigante.hide();
         mViewPager = (ViewPager) findViewById(R.id.tabsContainer);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -176,7 +158,10 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
+
     }
+
+
 
     private void enviaAviso(View view) {
         ConnectivityManager connectivityManager = (ConnectivityManager)
@@ -243,11 +228,6 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(this, UsuarioActivity.class);
                 i.putExtra("Usuario", user);
                 startActivity(i);
-                break;
-            case R.id.nav_informes:
-                Uri uri = Uri.parse("http://149.202.8.235/jasperserver/flow.html?_flowId=viewReportFlow&_flowId=viewReportFlow&ParentFolderUri=%2FdamG1%2FInformes&reportUnit=%2FdamG1%2FInformes%2FAvisos&standAlone=true&j_username=damG1&j_password=jatk1");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
                 break;
             case R.id.nav_refrescar:
                 recordatorioFragment.refrescaAvisos();

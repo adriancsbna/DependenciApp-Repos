@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DependeciApp.iml" filepath="$PROJECT_DIR$/DependeciApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TranquilDependiente.iml" filepath="$PROJECT_DIR$/TranquilDependiente.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

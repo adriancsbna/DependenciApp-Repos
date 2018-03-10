@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name" translatable="false">DependeciApp</string>
+    <string name="app_name" translatable="false">Tranquil</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
     <string name="teriminado_button">Terminado</string>
-    <string name="title_activity_login" translatable="false">DependenciApp</string>
+    <string name="title_activity_login">Tranquil</string>
     <string name="aviso_enviadio">Se ha enviado un aviso a la central</string>
     <string name="aviso_fallido">Ha habido un error enviando el aviso</string>
     <string name="no_conexion_aviso">No hay conexion, no se puede enviar el aviso</string>

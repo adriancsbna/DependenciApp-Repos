@@ -349,7 +349,7 @@ public class LoginActivity extends AppCompatActivity {
                     result = true;
                     DependenciaDBManager.UsuarioDBManager db = new DependenciaDBManager.UsuarioDBManager(getApplicationContext());
                     db.delete(String.valueOf(user.getIdPersona()));
-                    db.insert(user.getIdPersona(), user.getDNI(), user.getNombre(), user.getApellidos(), user.getfNacimiento().toString(), user.getGenero(), user.getTipoDeDependiente(), user.getfAlta().toString(), user.getPass());
+                    db.insert(user.getIdPersona(), user.getDNI(), user.getNombre(), user.getApellidos(), user.getfNacimiento().toString(), user.getGenero(),  user.getPass());
 
                 } else {
                     Log.i("URL", "ErrorCode: " + urlCon.getResponseCode());

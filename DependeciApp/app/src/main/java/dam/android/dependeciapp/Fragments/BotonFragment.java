@@ -32,7 +32,6 @@ public class BotonFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = null;
         rootView = inflater.inflate(R.layout.fragment_boton, container, false);
-        FrameLayout mapFrame = getActivity().findViewById(R.id.frameMap);
        textView = (TextView) rootView.findViewById(R.id.section_label);
         estableceSegunOrientacion();
         return rootView;

@@ -64,8 +64,6 @@ public final class DependenciaDBContract {
         public static final String APELLIDOS = "apellidos";
         public static final String FECHA_NACIMIENTO = "fecha_nacimiento";
         public static final String GENERO = "genero";
-        public static final String TIPO_DEPENDIENTE = "tipo_dependiente";
-        public static final String FECHA_ALTA = "fecha_alta";
         public static final String PASS = "pass";
 
 
@@ -77,8 +75,6 @@ public final class DependenciaDBContract {
                 + UsuarioDBContract.APELLIDOS + " TEXT NOT NULL, "
                 + UsuarioDBContract.FECHA_NACIMIENTO + " TEXT NOT NULL, "
                 + UsuarioDBContract.GENERO + " TEXT NOT NULL, "
-                + UsuarioDBContract.TIPO_DEPENDIENTE + " TEXT NOT NULL, "
-                + UsuarioDBContract.FECHA_ALTA + " TEXT NOT NULL, "
                 + UsuarioDBContract.PASS+" TEXT NOT NULL "
                 + ");";
 

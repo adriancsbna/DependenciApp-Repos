@@ -26,8 +26,6 @@ public class Usuario implements Serializable {
     private String apellidos;
     private Date fNacimiento;
     private String genero;
-    private String tipoDeDependiente;
-    private Date fAlta;
     private String pass;
 
     public Usuario(){}
@@ -42,9 +40,6 @@ public class Usuario implements Serializable {
             java.util.Date fna = format.parse(persona.getString("nacimiento"));
             fNacimiento = new Date(fna.getTime());
             genero = persona.getString("genero");
-            tipoDeDependiente = persona.getString("tipoDependiente");
-            fna = format.parse(persona.getString("fechaAlta"));
-            fAlta = new Date(fna.getTime());
             pass = persona.getString("pass");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -63,10 +58,7 @@ public class Usuario implements Serializable {
             java.util.Date dt = df.parse(cursor.getString(4));
             fNacimiento = new Date(dt.getTime());
             genero = cursor.getString(5);
-            tipoDeDependiente = cursor.getString(6);
-            dt = df.parse(cursor.getString(7));
-            fAlta = new Date(dt.getTime());
-            pass = cursor.getString(8);
+            pass = cursor.getString(6);
             cursor.close();
         } catch (ParseException e) {
             e.printStackTrace();
@@ -97,13 +89,6 @@ public class Usuario implements Serializable {
         return genero;
     }
 
-    public String getTipoDeDependiente() {
-        return tipoDeDependiente;
-    }
-
-    public Date getfAlta() {
-        return fAlta;
-    }
 
     public String getPass() {
         return pass;

@@ -207,7 +207,7 @@ public class DependenciaDBManager {
             usuarioDBHelper = DependenciaDBHelper.UsuarioDBHelper.getInstance(context);
         }
 
-        public void insert(int id, String dni, String nombre, String apellidos, String fecha_nacimiento, String genero, String tipo_dependiente, String fecha_alta, String pass) {
+        public void insert(int id, String dni, String nombre, String apellidos, String fecha_nacimiento, String genero,  String pass) {
             SQLiteDatabase sqLiteDatabase = usuarioDBHelper.getWritableDatabase();
 
             if (sqLiteDatabase != null) {
@@ -218,8 +218,6 @@ public class DependenciaDBManager {
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.APELLIDOS, apellidos);
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.FECHA_NACIMIENTO, fecha_nacimiento);
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.GENERO, genero);
-                contentValues.put(DependenciaDBContract.UsuarioDBContract.TIPO_DEPENDIENTE, tipo_dependiente);
-                contentValues.put(DependenciaDBContract.UsuarioDBContract.FECHA_ALTA, fecha_alta);
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.PASS, pass);
                 sqLiteDatabase.insert(DependenciaDBContract.UsuarioDBContract.TABLE_NAME, null, contentValues);
 
@@ -236,8 +234,7 @@ public class DependenciaDBManager {
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.APELLIDOS, apellidos);
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.FECHA_NACIMIENTO, fecha_nacimiento);
                 contentValues.put(DependenciaDBContract.UsuarioDBContract.GENERO, genero);
-                contentValues.put(DependenciaDBContract.UsuarioDBContract.TIPO_DEPENDIENTE, tipo_dependiente);
-                contentValues.put(DependenciaDBContract.UsuarioDBContract.FECHA_ALTA, fecha_alta);
+
 
                 String tableName = DependenciaDBContract.UsuarioDBContract.TABLE_NAME;
                 String whereClause = DependenciaDBContract.UsuarioDBContract._ID + " = ?";
@@ -281,8 +278,6 @@ public class DependenciaDBManager {
                         DependenciaDBContract.UsuarioDBContract.APELLIDOS,
                         DependenciaDBContract.UsuarioDBContract.FECHA_NACIMIENTO,
                         DependenciaDBContract.UsuarioDBContract.GENERO,
-                        DependenciaDBContract.UsuarioDBContract.TIPO_DEPENDIENTE,
-                        DependenciaDBContract.UsuarioDBContract.FECHA_ALTA,
                         DependenciaDBContract.UsuarioDBContract.PASS};
 
                 cursor = sqLiteDatabase.query(DependenciaDBContract.UsuarioDBContract.TABLE_NAME,

@@ -21,8 +21,6 @@ public class UsuarioActivity extends AppCompatActivity {
     private TextView tvDniResult;
     private TextView tvFechaNacimientoResult;
     private TextView tvGeneroResult;
-    private TextView tvFechaAltaResult;
-    private TextView tvTipoDependienteResult;
     private Button btnCerrar;
     private Usuario user;
 
@@ -42,8 +40,7 @@ public class UsuarioActivity extends AppCompatActivity {
         tvDniResult = findViewById(R.id.tvDniResult);
         tvFechaNacimientoResult = findViewById(R.id.tvFechaNacimientoResult);
         tvGeneroResult = findViewById(R.id.tvGeneroResult);
-        tvFechaAltaResult = findViewById(R.id.tvFechaAltaResult);
-        tvTipoDependienteResult = findViewById(R.id.tvTipoDependienteResult);
+
         btnCerrar = findViewById(R.id.btnCerrar);
 
         cargarDatosUsuario();
@@ -56,8 +53,7 @@ public class UsuarioActivity extends AppCompatActivity {
         tvDniResult.setText(user.getDNI());
         tvFechaNacimientoResult.setText(user.getfNacimiento().toString());
         tvGeneroResult.setText(user.getGenero());
-        tvFechaAltaResult.setText(user.getfAlta().toString());
-        tvTipoDependienteResult.setText(user.getTipoDeDependiente());
+
     }
 
     public void onClick(View v){

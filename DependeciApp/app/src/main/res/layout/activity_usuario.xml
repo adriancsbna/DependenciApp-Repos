@@ -67,30 +67,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvFechaNacimiento" />
 
     <TextView
-        android:id="@+id/tvTipoDependiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/tvTipoDependiente"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/holo_orange_dark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFechaAlta" />
-
-    <TextView
-        android:id="@+id/tvFechaAlta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/tvFechaAlta"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/holo_orange_dark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGenero" />
-
-    <TextView
         android:id="@+id/tvUsuarioId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -175,30 +151,6 @@
         android:textColor="@android:color/holo_orange_dark"
         app:layout_constraintStart_toEndOf="@+id/tvGenero"
         app:layout_constraintTop_toBottomOf="@+id/tvFechaNacimientoResult" />
-
-    <TextView
-        android:id="@+id/tvFechaAltaResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text=""
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/holo_orange_dark"
-        app:layout_constraintStart_toEndOf="@+id/tvFechaAlta"
-        app:layout_constraintTop_toBottomOf="@+id/tvGeneroResult" />
-
-    <TextView
-        android:id="@+id/tvTipoDependienteResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text=""
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/holo_orange_dark"
-        app:layout_constraintStart_toEndOf="@+id/tvTipoDependiente"
-        app:layout_constraintTop_toBottomOf="@+id/tvFechaAltaResult" />
 
     <Button
         android:id="@+id/btnCerrar"
